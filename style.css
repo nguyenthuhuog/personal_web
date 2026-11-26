@@ -43,7 +43,7 @@ a:hover {
   align-items: flex-start;
 }
 
-/* Left Sidebar: Fixed/Sticky General Info */
+/* Left Sidebar: Sticky General Info */
 .sidebar {
   width: var(--sidebar-width);
   flex-shrink: 0;
@@ -195,7 +195,7 @@ a:hover {
   border-color: #bfdbfe;
 }
 
-/* Tab Panels */
+/* Tab Panels & Subsections */
 .tab-panel {
   display: none;
 }
@@ -210,14 +210,67 @@ a:hover {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.tab-heading {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 18px;
+.subsection {
+  margin-bottom: 32px;
 }
 
-/* Items */
+.subsection:last-child {
+  margin-bottom: 0;
+}
+
+.tab-heading {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #0f172a;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Home Tab */
+.home-summary {
+  font-size: 0.96rem;
+  color: #334155;
+  line-height: 1.75;
+}
+
+.goal-list {
+  margin-left: 20px;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.goal-list li {
+  margin-bottom: 8px;
+}
+
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.hobby-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.hobby-title {
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.hobby-detail {
+  font-size: 0.87rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* Education, Experience & Projects */
 .item {
   padding-bottom: 18px;
   margin-bottom: 18px;
@@ -267,7 +320,7 @@ ul.bullets li {
   margin-bottom: 4px;
 }
 
-/* Publications */
+/* Publications (IEEE Format) */
 .pub-item {
   display: flex;
   align-items: flex-start;
@@ -336,7 +389,7 @@ ul.bullets li {
   font-size: 0.9rem;
 }
 
-/* Responsive for Mobile / Tablet */
+/* Responsive */
 @media (max-width: 860px) {
   .layout {
     flex-direction: column;

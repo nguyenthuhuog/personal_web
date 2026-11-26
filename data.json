@@ -2,11 +2,10 @@
   "profile": {
     "avatar": "avatar.jpg",
     "name": "Nguyen Thu Huong",
-    "role": "Graduate student and Teaching Assistant",
+    "role": "Graduate student and Teaching assistant",
     "institution": "School of Electrical and Electronic Engineering - Hanoi University of Science and Technology",
     "email": "huong.nguyenthu4@hust.edu.vn",
     "personal_email": "huong.nt210423@gmail.com",
-    "phone": "+84 334 020 608",
     "orcid": "0009-0000-1430-1304",
     "tmp_github": "https://github.com/nguyenthuhuog",
     "_bio": "Graduate student and Research/Teaching Assistant at HUST specializing in Machine Learning, Deep Learning, Signal Processing, and Data-Centric AI applications.",
@@ -15,6 +14,14 @@
       "Time-Series & Multi-Horizon Forecasting",
       "Signal Processing & Electronic Nose Systems",
       "Data-Centric AI & Anomaly Detection"
+    ]
+  },
+"home": {
+    "summary": "I am a Master's student in the ACMI (Ambient Computing, Multimedia & Interaction) Computer Science program and a Teaching Assistant at the School of Electrical and Electronic Engineering (SEEE), Hanoi University of Science and Technology (HUST). My academic background bridges Electronics and Telecommunications Engineering with Computer Science, focusing on building reliable Machine Learning and Deep Learning solutions for real-world sensor data, time-series forecasting, and signal processing. Outside of research, I enjoy reading stories, crafting handmade items, dancing Yosakoi, and trying new foods.",
+    "goals": [
+      "Pursue and complete a Ph.D. in Computer Science with a strong focus on AI, Machine Learning, and trustworthy data-centric systems.",
+      "Return to Hanoi University of Science and Technology (HUST) as a full-time university lecturer.",
+      "Mentor and guide future generations of students to navigate, research, and grow in the fields of Artificial Intelligence and Machine Learning."
     ]
   },
 "publications": [
@@ -76,13 +83,15 @@
   ],
   "experience": [
     {
-        "role": "Teaching Assistant",
-            "organization": "School of Electrical and Electronic Engineering - Hanoi University of Science and Technology",
-            "orgUrl": "https://hust.edu.vn/",
-            "period": "Jan 2026 – Present",
-            "highlights": [
-                "Co-supervised undergraduate research projects and provided technical consultations to resolve student inquiries."
-            ]    },
+      "role": "Teaching Assistant",
+          "organization": "School of Electrical and Electronic Engineering - Hanoi University of Science and Technology",
+          "orgUrl": "https://hust.edu.vn/",
+          "period": "Jan 2026 – Present",
+      "highlights": [
+              "Assisted with in-class exercises, conducted tutorial/problem-solving sessions, and evaluated student coursework.",
+              "Co-supervised undergraduate projects and provided technical consultations to resolve student inquiries."
+            ] 
+    },
     {
       "role": "AI Engineer",
       "organization": "Viettel Software – Viettel Group",
@@ -101,8 +110,9 @@
         "location": "Hanoi, Vietnam",
         "period": "2026 – Expected Jun/Jul 2027",
         "details": [
-            "CPA: 3.8 / 4.0 (In progress)"
-
+            "CPA: 3.8 / 4.0 (In progress)",
+            "Thesis Title: Sensor-Aware Self-Supervised Transfer Learning for Label-Efficient Multigas Electronic Nose Calibration",
+            "Advisor: PhD. Nguyen Dinh Van - SEEE - HUST"
         ]
         },
         {
@@ -113,8 +123,10 @@
         "details": [
             "CPA: 3.79 / 4.0 | Class Rank: 2/38",
             "Awarded HUST Encouragement Scholarship for 7 consecutive semesters (Top 5% of cohort every term)",
-            "Key Course Grades: Probability and Statistics (A+), Digital Image Processing (A+), Differential Equations and Series (A)"
-        ]
+            "Key Course Grades: Probability and Statistics (A+), Digital Image Processing (A+), Differential Equations and Series (A)",
+            "Thesis Title: A Comprehensive Comparison of Machine Learning Models for Smart Electronic Noses",
+            "Advisor: PhD. Nguyen Dinh Van - SEEE - HUST"
+          ]
         }
     ],
     "skills": {
