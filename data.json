@@ -18,11 +18,7 @@
   },
 "home": {
     "summary": "I am a Master's student in the ACMI (Ambient Computing, Multimedia & Interaction) Computer Science program and a Teaching Assistant at the School of Electrical and Electronic Engineering (SEEE), Hanoi University of Science and Technology (HUST). My academic background bridges Electronics and Telecommunications Engineering with Computer Science, focusing on building reliable Machine Learning and Deep Learning solutions for real-world sensor data, time-series forecasting, and signal processing. Outside of research, I enjoy reading stories, crafting handmade items, dancing Yosakoi, and trying new foods.",
-    "goals": [
-      "Pursue and complete a Ph.D. in Computer Science with a strong focus on AI, Machine Learning, and trustworthy data-centric systems.",
-      "Return to Hanoi University of Science and Technology (HUST) as a full-time university lecturer.",
-      "Mentor and guide future generations of students to navigate, research, and grow in the fields of Artificial Intelligence and Machine Learning."
-    ]
+    "goals": "My primary academic goal is to pursue and complete a Ph.D. in Computer Science with a strong focus on Artificial Intelligence, Machine Learning, and trustworthy data-centric systems. Upon completing my doctoral studies, I aspire to return to Hanoi University of Science and Technology (HUST) as a full-time university lecturer, where I can dedicate myself to mentoring and guiding future generations of students to navigate, research, and grow in the fields of AI and Machine Learning."  
   },
 "publications": [
     {
@@ -110,7 +106,7 @@
         "location": "Hanoi, Vietnam",
         "period": "2026 – Expected Jun/Jul 2027",
         "details": [
-            "CPA: 3.8 / 4.0 (In progress)",
+            "CPA: 3.83 / 4.0 (In progress)",
             "Thesis Title: Sensor-Aware Self-Supervised Transfer Learning for Label-Efficient Multigas Electronic Nose Calibrationg",
             "Advisor: PhD. Nguyen Dinh Van - SEEE - HUST"
         ]

@@ -83,7 +83,7 @@
 
         <div class="subsection">
           <h2 class="tab-heading">Academic &amp; Career Goals</h2>
-          <ul class="goal-list" id="home-goals"></ul>
+          <p class="home-summary" id="home-goals"></p>
         </div>
       </section>
 
@@ -225,9 +225,7 @@
       if (home.summary) {
         document.getElementById("home-summary").textContent = home.summary;
       }
-      document.getElementById("home-goals").innerHTML = (home.goals || [])
-        .map(g => `<li>${g}</li>`)
-        .join("");
+      document.getElementById("home-goals").innerHTML = home.goals || "";
 
       // Tab 2: Education & Experience
       document.getElementById("edu-list").innerHTML = (data.education || []).map(edu => {
@@ -297,11 +295,7 @@
         renderPortfolio(data);
       } catch (err) {
         console.error("Failed to load data.json:", err);
-        document.getElementById("home-goals").innerHTML = `
-          <li class="notice">
-            Không thể tải đầy đủ dữ liệu từ <code>data.json</code>. Hãy kiểm tra file <code>data.json</code> trên GitHub hoặc chạy qua HTTP server.
-          </li>
-        `;
+        document.getElementById("home-goals").innerHTML = data.home.goals || "";
       }
     }
 
