@@ -1,0 +1,126 @@
+{
+  "profile": {
+    "avatar": "avatar.jpg",
+    "name": "Nguyen Thu Huong",
+    "role": "Graduate student and Teaching Assistant",
+    "institution": "School of Electrical and Electronic Engineering - Hanoi University of Science and Technology",
+    "email": "huong.nguyenthu4@hust.edu.vn",
+    "personal_email": "huong.nt210423@gmail.com",
+    "phone": "+84 334 020 608",
+    "orcid": "0009-0000-1430-1304",
+    "tmp_github": "https://github.com/nguyenthuhuog",
+    "_bio": "Graduate student and Research/Teaching Assistant at HUST specializing in Machine Learning, Deep Learning, Signal Processing, and Data-Centric AI applications.",
+    "researchInterests": [
+      "Applied Machine Learning & Deep Learning",
+      "Time-Series & Multi-Horizon Forecasting",
+      "Signal Processing & Electronic Nose Systems",
+      "Data-Centric AI & Anomaly Detection"
+    ]
+  },
+"publications": [
+    {
+      "authors": "N. T. T. Ha, H. D. Nguyen, N. T. Huong, T. N. Hoang, and N. D. Nguyen",
+      "title": "From synthetic to real: a generalizable autoencoder framework for anomaly detection in electronic nose systems",
+      "venue": "Engineering Research Express",
+      "type": "journal",
+      "volume": "8",
+      "number": "",
+      "pages": "",
+      "year": "2026",
+      "doi": "10.1088/2631-8695/aea80b",
+      "status": "Published"
+    },
+    {
+      "authors": "N. T. Huong, N. D. P. Hoang, H. N. Thanh, M. K. Hoc, D. T. T. Ha, and N. D. Van",
+      "title": "A Comprehensive Comparison of Machine Learning Models for Smart Electronic Noses",
+      "venue": "Lecture Notes in Mechanical Engineering",
+      "type": "conference",
+      "volume": "",
+      "number": "",
+      "pages": "",
+      "year": "2025",
+      "doi": "10.1007/978-3-031-96126-7_4",
+      "status": "Published"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Solar Power Forecasting",
+      "period": "July 2026 – Present",
+      "tech": ["Python", "Machine Learning", "Deep Learning"],
+      "highlights": [
+        "Conducted feature engineering to enhance model robustness and reduce prediction error.",
+        "Investigated and evaluated Machine Learning and Deep Learning architectures to forecast short-term and multi-horizon solar power output."
+      ]
+    },
+    {
+      "title": "Chemical Identification via Electrical Sensor Analysis",
+      "period": "May 2024 – Sep 2026",
+      "tech": ["Python", "Scikit-learn"],
+      "highlights": [
+        "Performed Exploratory Data Analysis (EDA) and investigated signal patterns from electrical sensors to classify chemical compositions.",
+        "Conducted a systematic performance analysis and authored a comprehensive technical report detailing methodology and experimental results."
+      ]
+    },
+    {
+      "title": "Interference Identification and Localization (Project iSpectra)",
+      "period": "July 2025 – Dec 2025",
+      "tech": ["Python", "RESTful API", "GitLab"],
+      "link": "https://vnexpress.net/he-thong-phat-hien-nhieu-thong-tin-di-dong-do-viet-nam-sang-tao-4935275.html",
+      "linkLabel": "Press Release",
+      "highlights": [
+        "Contributed to the development of Deep Learning modules for radio frequency interference classification and source localization in 4G/5G networks at Viettel Software.",
+        "Developed and optimized a signal source localization module, achieving high precision in identifying interference coordinates within complex network topologies."
+      ]
+    }
+  ],
+  "experience": [
+    {
+        "role": "Teaching Assistant",
+            "organization": "School of Electrical and Electronic Engineering - Hanoi University of Science and Technology",
+            "orgUrl": "https://hust.edu.vn/",
+            "period": "Jan 2026 – Present",
+            "highlights": [
+                "Co-supervised undergraduate research projects and provided technical consultations to resolve student inquiries."
+            ]    },
+    {
+      "role": "AI Engineer",
+      "organization": "Viettel Software – Viettel Group",
+      "orgUrl": "https://viettel.com.vn/en/",
+      "period": "July 2025 – Dec 2025",
+      "highlights": [
+        "Collaborated with Backend and Business Analyst teams to deploy the tasked engine as a scalable RESTful API.",
+        "Performed literature reviews and joined technical seminars to refine model architectures."
+      ]
+    }
+  ],
+    "education": [
+        {
+        "degree": "Master Program in Computer Science (Specialization: Ambient Computing, Multimedia & Interaction)",
+        "institution": "Hanoi University of Science and Technology (HUST)",
+        "location": "Hanoi, Vietnam",
+        "period": "2026 – Expected Jun/Jul 2027",
+        "details": [
+            "CPA: 3.8 / 4.0 (In progress)"
+
+        ]
+        },
+        {
+        "degree": "Bachelor of Engineering in Electronics and Telecommunications Engineering (Specialization: Digital Communication and Multimedia Engineering)",
+        "institution": "Hanoi University of Science and Technology (HUST)",
+        "location": "Hanoi, Vietnam",
+        "period": "Sep 2021 – Jul 2025",
+        "details": [
+            "CPA: 3.79 / 4.0 | Class Rank: 2/38",
+            "Awarded HUST Encouragement Scholarship for 7 consecutive semesters (Top 5% of cohort every term)",
+            "Key Course Grades: Probability and Statistics (A+), Digital Image Processing (A+), Differential Equations and Series (A)"
+        ]
+        }
+    ],
+    "skills": {
+    "Languages & Databases": "Python, C/C++, MATLAB, SQL, HTML/CSS, UV",
+    "Libraries & Frameworks": "PyTorch, TensorFlow, Scikit-learn, Pandas, NumPy, Matplotlib",
+    "Research Tools & Platforms": "Git, Google Colab, Kaggle, Anaconda, LaTeX",
+    "Languages": "English (IELTS 8.0)"
+  }
+}

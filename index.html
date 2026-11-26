@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nguyen Thu Huong | Academic Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Left Panel: General Info (Sticky on Desktop) -->
+    <aside class="sidebar" id="about-panel">
+      <div class="avatar-wrap" id="avatar-wrap">
+        <span class="avatar-fallback" id="avatar-fallback">NH</span>
+      </div>
+
+      <h1 class="profile-name" id="name">Loading...</h1>
+      <div class="profile-role" id="role"></div>
+
+      <p class="profile-bio" id="bio"></p>
+
+      <div class="profile-meta" id="meta"></div>
+
+      <div class="sidebar-section-title">Research Interests</div>
+      <div class="tags" id="interests"></div>
+    </aside>
+
+    <!-- Right Panel: Separate Tabs -->
+    <main class="main-content">
+      <div class="tabs" role="tablist" aria-label="Portfolio sections">
+        <button class="tab-btn active" data-tab="publications" role="tab" aria-selected="true">Publications</button>
+        <button class="tab-btn" data-tab="projects" role="tab" aria-selected="false">Projects</button>
+        <button class="tab-btn" data-tab="experience" role="tab" aria-selected="false">Experience</button>
+        <button class="tab-btn" data-tab="education" role="tab" aria-selected="false">Education</button>
+        <button class="tab-btn" data-tab="skills" role="tab" aria-selected="false">Skills</button>
+      </div>
+
+      <section class="tab-panel active" id="tab-publications" role="tabpanel">
+        <h2 class="tab-heading">Selected Publications</h2>
+        <div id="pub-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-projects" role="tabpanel">
+        <h2 class="tab-heading">Research &amp; Engineering Projects</h2>
+        <div id="project-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-experience" role="tabpanel">
+        <h2 class="tab-heading">Experience</h2>
+        <div id="exp-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-education" role="tabpanel">
+        <h2 class="tab-heading">Education</h2>
+        <div id="edu-list"></div>
+      </section>
+
+      <section class="tab-panel" id="tab-skills" role="tabpanel">
+        <h2 class="tab-heading">Technical Skills &amp; Languages</h2>
+        <div id="skill-list"></div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function initTabs() {
+      const buttons = document.querySelectorAll(".tab-btn");
+      const panels = document.querySelectorAll(".tab-panel");
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const target = btn.dataset.tab;
+
+          buttons.forEach(b => {
+            b.classList.remove("active");
+            b.setAttribute("aria-selected", "false");
+          });
+          panels.forEach(p => p.classList.remove("active"));
+
+          btn.classList.add("active");
+          btn.setAttribute("aria-selected", "true");
+          document.getElementById(`tab-${target}`).classList.add("active");
+        });
+      });
+    }
+
+    function renderAvatar(profile) {
+      const wrap = document.getElementById("avatar-wrap");
+      const fallback = document.getElementById("avatar-fallback");
+
+      if (profile.name) {
+        const initials = profile.name
+          .split(" ")
+          .filter(Boolean)
+          .slice(-2)
+          .map(w => w[0].toUpperCase())
+          .join("");
+        fallback.textContent = initials || "CV";
+      }
+
+      if (profile.avatar) {
+        const img = document.createElement("img");
+        img.src = profile.avatar;
+        img.alt = profile.name || "Profile photo";
+        img.onload = () => {
+          fallback.style.display = "none";
+          wrap.appendChild(img);
+        };
+        img.onerror = () => {
+          fallback.style.display = "flex";
+        };
+      }
+    }
+
+    function renderPortfolio(data) {
+        const p = data.profile || {};
+        document.title = `${p.name || "Portfolio"} | Academic Portfolio`;
+        document.getElementById("name").textContent = p.name || "";
+        document.getElementById("role").textContent = [p.role, p.institution].filter(Boolean).join(" · ");
+        document.getElementById("bio").textContent = p.bio || "";
+
+        renderAvatar(p);
+
+        const metaRows = [];
+        if (p.email) metaRows.push(`<div><strong>Email:</strong> <a href="mailto:${p.email}">${p.email}</a></div>`);
+        if (p.personal_email) metaRows.push(`<div><strong>Personal Email:</strong> <a href="mailto:${p.personal_email}">${p.personal_email}</a></div>`);
+        if (p.phone) metaRows.push(`<div><strong>Phone:</strong> ${p.phone}</div>`);
+        if (p.orcid) metaRows.push(`<div><strong>ORCID:</strong> <a href="https://orcid.org/${p.orcid}" target="_blank">${p.orcid}</a></div>`);
+        if (p.github) metaRows.push(`<div><strong>GitHub:</strong> <a href="${p.github}" target="_blank">${p.github.replace(/^https?:\/\//, "")}</a></div>`);
+        document.getElementById("meta").innerHTML = metaRows.join("");
+
+        document.getElementById("interests").innerHTML = (p.researchInterests || [])
+            .map(item => `<span class="tag">${item}</span>`)
+            .join("");
+
+        function formatIeeeCitation(pub) {
+            const authors = (pub.authors || "").replace(/(N\. T\. Huong)/g, "<strong>$1</strong>");
+            const title = pub.title ? `"${pub.title},"` : "";
+            const prefix = pub.type === "conference" ? "in " : "in ";
+            const venue = pub.venue ? `${prefix}<span class="pub-venue">${pub.venue}</span>` : "";
+            const vol = pub.volume ? `, vol. ${pub.volume}` : "";
+            const no = pub.number ? `, no. ${pub.number}` : "";
+            const pages = pub.pages ? `, pp. ${pub.pages}` : "";
+            const year = pub.year ? `, ${pub.year}` : "";
+
+            const doiClean = (pub.doi || "").replace(/^https?:\/\/(dx\.)?doi\.org\//i, "");
+            const doiText = doiClean ? `, doi: <a href="https://doi.org/${doiClean}" target="_blank">${doiClean}</a>.` : ".";
+            const statusBadge = pub.status ? `<span class="badge">${pub.status}</span>` : "";
+
+            return `${authors}, ${title} ${venue}${vol}${no}${pages}${year}${doiText} ${statusBadge}`;
+        }
+
+        document.getElementById("pub-list").innerHTML = (data.publications || []).map((pub, idx) => `
+        <div class="pub-item">
+            <span class="pub-index">[${idx + 1}]</span>
+            <div class="pub-body">${formatIeeeCitation(pub)}</div>
+        </div>
+        `).join("");
+        document.getElementById("project-list").innerHTML = (data.projects || []).map(proj => {
+            const techStr = proj.tech && proj.tech.length ? `<em>${proj.tech.join(", ")}</em>` : "";
+            const extLink = proj.link ? ` (<a href="${proj.link}" target="_blank">${proj.linkLabel || "Link"}</a>)` : "";
+            const bullets = (proj.highlights || []).map(h => `<li>${h}</li>`).join("");
+            return `
+            <div class="item">
+                <div class="item-header">
+                <div class="item-title">${proj.title}${extLink}</div>
+                <div class="item-meta">${proj.period || ""}</div>
+                </div>
+                <div class="item-sub">${techStr}</div>
+                <ul class="bullets">${bullets}</ul>
+            </div>
+            `;
+        }).join("");
+
+        document.getElementById("exp-list").innerHTML = (data.experience || []).map(exp => {
+            const orgHtml = exp.orgUrl ? `<a href="${exp.orgUrl}" target="_blank">${exp.organization}</a>` : exp.organization;
+            const bullets = (exp.highlights || []).map(h => `<li>${h}</li>`).join("");
+            return `
+            <div class="item">
+                <div class="item-header">
+                <div class="item-title">${exp.role}</div>
+                <div class="item-meta">${exp.period || ""}</div>
+                </div>
+                <div class="item-sub">${orgHtml}</div>
+                <ul class="bullets">${bullets}</ul>
+            </div>
+            `;
+        }).join("");
+
+        document.getElementById("edu-list").innerHTML = (data.education || []).map(edu => {
+            const bullets = (edu.details || []).map(d => `<li>${d}</li>`).join("");
+            return `
+            <div class="item">
+                <div class="item-header">
+                <div class="item-title">${edu.institution}</div>
+                <div class="item-meta">${edu.period || ""}</div>
+                </div>
+                <div class="item-sub">${edu.degree || ""}${edu.location ? ` — ${edu.location}` : ""}</div>
+                <ul class="bullets">${bullets}</ul>
+            </div>
+            `;
+        }).join("");
+
+        document.getElementById("skill-list").innerHTML = Object.entries(data.skills || {}).map(([k, v]) => `
+            <div class="skill-row"><span class="skill-label">${k}:</span> ${v}</div>
+        `).join("");
+    }
+
+    async function loadPortfolio() {
+      try {
+        const res = await fetch(`data.json?t=${Date.now()}`);
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const data = await res.json();
+        renderPortfolio(data);
+      } catch (err) {
+        console.error("Failed to load data.json:", err);
+        document.getElementById("pub-list").innerHTML = `
+          <div class="notice">
+            Không thể tải <code>data.json</code>. Hãy chạy qua HTTP server (ví dụ <code>python -m http.server 8000</code>) hoặc kiểm tra file <code>data.json</code> trên GitHub Pages.
+          </div>
+        `;
+      }
+    }
+
+    initTabs();
+    loadPortfolio();
+  </script>
+</body>
+</html>
